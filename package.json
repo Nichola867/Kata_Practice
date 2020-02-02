@@ -1,0 +1,14 @@
+{
+  "name": "kata_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main":"kata_practice",
+  "scripts": {
+    "test": "jest ./test/kata.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
