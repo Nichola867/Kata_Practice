@@ -36,9 +36,9 @@ describe("likes", () => {
     expect(likes(["Peter"])).toBe("Peter likes this");
     expect(likes(["Max", "John", "Mark"])).toBe("Max, John and Mark like this");
   })
-  // test("Returns a string which includes the names of the first 2 people listed in the array if it includes more than 3 names", () => {
-  //   expect(likes(["Alex", "Jacob", "Mark", "Max"])).toBe("Alex, Jacob and 2 others like this");
-  // });
+  test("Returns a string which includes the names of the first 2 people listed in the array if it includes more than 3 names", () => {
+    expect(likes(["Alex", "Jacob", "Mark", "Max"])).toBe("Alex, Jacob and 2 others like this");
+  });
 })
 
 

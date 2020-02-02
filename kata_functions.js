@@ -15,26 +15,25 @@ function noSpace(x) {
   return x.split(' ').join('')
 }
 
-//[] toBe "no one likes this" <1
-//["Peter"] toBe "Peter likes this"; <2
-//["Max", "John"] to be "Max and John like this" <3
-//["Max", "John", "Mark"] toBe "Max, John and Mark like this" <4
-//["Alex", "Jacob", "Mark", "Max"] toBe "Alex, Jacob and 2 others like this" >4
 
 function likes(names) {
+
+  let name1 = names[0]
+  let name2 = names[1]
+  let name3 = names[2]
+
+
   if (names.length < 1) {
     return "no one likes this"
   } else if (names.length < 2) {
-    return names[0] + " likes this"
+    return `${name1} likes this`
   } else if (names.length < 3) {
-    return names[0] + " and " + names[1] + " like this"
+    return `${name1} and ${name2} like this`
   } else if (names.length < 4) {
-    return names[0] + ", " + names[1] + " and " + names[2] + " like this"
+    return `${name1}, ${name2} and ${name3} like this`
   }
-  return names[0] + ", " + names[1] + " and " + (names.length - 2) + " like this"
+  return `${name1}, ${name2} and ${names.length - 2} others like this`
 }
-
-
 
 
 module.exports = {
