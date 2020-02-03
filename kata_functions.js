@@ -36,9 +36,25 @@ function likes(names) {
 }
 
 
+// everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block in a direction and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+
+function isValidWalk(walk) {
+  // determine if array equals 10 mins in length (1 min per direction) - working
+
+  let nArray = (walk.filter(n => n === "n").length)
+  let sArray = (walk.filter(n => n === "s").length)
+  let eArray = (walk.filter(n => n === "e").length)
+  let wArray = (walk.filter(n => n === "w").length)
+
+ 
+  return walk.length === 10 && nArray === sArray && eArray === wArray;
+}
+
+
 module.exports = {
   squareDigits,
   boolToWord,
   noSpace,
-  likes
+  likes,
+  isValidWalk
 };

@@ -2,7 +2,8 @@ const {
   squareDigits,
   boolToWord,
   noSpace,
-  likes
+  likes,
+  isValidWalk
 } = require("../kata_functions");
 
 describe("squareDigits", () => {
@@ -41,5 +42,14 @@ describe("likes", () => {
   });
 })
 
-
-
+describe("isValidWalk", () => {
+  test("Returns true if directions take 10 mins, false if more or less", () => {
+    expect(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 'n'])).toBe(false);
+    expect(isValidWalk(['n', 'n', 'w', 'w', 'w', 's', 's', 'e', 'e', 'e'])).toBe(true);
+    expect(isValidWalk(['w', 's', 'e', 'w', 'w', 's', 'w', 's', 's', 'n'])).toBe(false);
+    expect(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'])).toBe(true);
+    expect(isValidWalk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'])).toBe(false);
+    expect(isValidWalk(['w'])).toBe(false);
+    expect(isValidWalk(['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'])).toBe(false);
+  });
+});
