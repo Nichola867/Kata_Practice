@@ -67,11 +67,20 @@ function isPangram(string) {
   })
 }
 
+ //[1, 2, 'a', 'b'])).toEqual([1, 2])
+function filter_list(l) {
+ return l.filter(n => 
+   typeof(n) === "number"
+ )
+}
+
+
 module.exports = {
   squareDigits,
   boolToWord,
   noSpace,
   likes,
   isValidWalk,
-  isPangram
+  isPangram,
+  filter_list
 };

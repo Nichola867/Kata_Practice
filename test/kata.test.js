@@ -4,7 +4,8 @@ const {
   noSpace,
   likes,
   isValidWalk,
-  isPangram
+  isPangram,
+  filter_list
 } = require("../kata_functions");
 
 describe("squareDigits", () => {
@@ -65,5 +66,13 @@ describe("isPangram", () => {
   })
   test("Returns false when a letter is missing", () => {
     expect(isPangram("abcdefghijklmopqrstuvwxyz ")).toBe(false)
+  })
+})
+
+describe("filter_list", () => {
+  test("Return a new array with the strings filtered out", () => {
+    expect(filter_list([1, 2, 'a', 'b'])).toEqual([1, 2])
+    expect(filter_list([1, 'a', 'b', 0, 15])).toEqual([1, 0, 15])
+    expect(filter_list([1, 2, 'aasf', '1', '123', 123])).toEqual([1, 2, 123])
   })
 })
