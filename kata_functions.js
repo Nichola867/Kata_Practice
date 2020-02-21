@@ -1,8 +1,6 @@
 function squareDigits(num) {
   let numArray = num.toString().split("");
-
   const map = numArray.map(n => n * n)
-
   return (Number(map.join("")))
 }
 
@@ -14,7 +12,6 @@ function boolToWord(bool) {
 function noSpace(x) {
   return x.split(' ').join('')
 }
-
 
 function likes(names) {
 
@@ -46,15 +43,35 @@ function isValidWalk(walk) {
   let eArray = (walk.filter(n => n === "e").length)
   let wArray = (walk.filter(n => n === "w").length)
 
- 
+
   return walk.length === 10 && nArray === sArray && eArray === wArray;
 }
 
+
+// function isPangram(string) {
+
+//   let charArray = string.trim().toLowerCase().replace(/[^a-zA-Z]/g).split("")
+
+//   const charObj = {}
+//   charArray.forEach(n => charObj[n] = charArray.filter(x => x === n).length.toString())
+
+// return (Object.keys(charObj).length === 26 ? true : false)
+//}
+  
+//Refactored to:
+function isPangram(string) {
+
+  string = string.toLowerCase()
+  return "abcdefghijklmnopqrstuvwxyz".split("").every(n => {
+    return string.indexOf(n) !== -1
+  })
+}
 
 module.exports = {
   squareDigits,
   boolToWord,
   noSpace,
   likes,
-  isValidWalk
+  isValidWalk,
+  isPangram
 };

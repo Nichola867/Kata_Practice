@@ -3,7 +3,8 @@ const {
   boolToWord,
   noSpace,
   likes,
-  isValidWalk
+  isValidWalk,
+  isPangram
 } = require("../kata_functions");
 
 describe("squareDigits", () => {
@@ -43,7 +44,7 @@ describe("likes", () => {
 })
 
 describe("isValidWalk", () => {
-  test("Returns true if directions take 10 mins, false if more or less", () => {
+  test("Returns true if directions take 10 mins and is a loop, false if not", () => {
     expect(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 'n'])).toBe(false);
     expect(isValidWalk(['n', 'n', 'w', 'w', 'w', 's', 's', 'e', 'e', 'e'])).toBe(true);
     expect(isValidWalk(['w', 's', 'e', 'w', 'w', 's', 'w', 's', 's', 'n'])).toBe(false);
@@ -53,3 +54,16 @@ describe("isValidWalk", () => {
     expect(isValidWalk(['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'])).toBe(false);
   });
 });
+
+describe("isPangram", () => {
+  test("Returns true if string is a pangram (contains at least 1 of every letter)", () => {
+    expect(isPangram("The quick brown fox jumps over the lazy dog")).toBe(true);
+    expect(isPangram("This is not a pangram")).toBe(false);
+  })
+  test("is not case sensitive", () => {
+    expect(isPangram("aBcDefGhiJklMnoPQRstUvWxYz")).toBe(true);
+  })
+  test("Returns false when a letter is missing", () => {
+    expect(isPangram("abcdefghijklmopqrstuvwxyz ")).toBe(false)
+  })
+})
