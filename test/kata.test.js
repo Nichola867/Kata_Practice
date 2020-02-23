@@ -5,7 +5,8 @@ const {
   likes,
   isValidWalk,
   isPangram,
-  filter_list
+  filter_list,
+  bouncingBall
 } = require("../kata_functions");
 
 describe("squareDigits", () => {
@@ -74,5 +75,14 @@ describe("filter_list", () => {
     expect(filter_list([1, 2, 'a', 'b'])).toEqual([1, 2])
     expect(filter_list([1, 'a', 'b', 0, 15])).toEqual([1, 0, 15])
     expect(filter_list([1, 2, 'aasf', '1', '123', 123])).toEqual([1, 2, 123])
+  })
+})
+
+describe("bouncingBall", () => {
+  test("Number of times a bouncing ball passes a window is 3", () => {
+expect(bouncingBall(3.0, 0.66, 1.5)).toBe(3)
+  })
+  test("Number of times a bouncing ball passes a window is 15", () => {
+expect(bouncingBall(30.0, 0.66, 1.5)).toBe(15)
   })
 })

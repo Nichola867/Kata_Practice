@@ -47,17 +47,14 @@ function isValidWalk(walk) {
   return walk.length === 10 && nArray === sArray && eArray === wArray;
 }
 
-
+//alternative option:
 // function isPangram(string) {
-
 //   let charArray = string.trim().toLowerCase().replace(/[^a-zA-Z]/g).split("")
-
 //   const charObj = {}
 //   charArray.forEach(n => charObj[n] = charArray.filter(x => x === n).length.toString())
-
 // return (Object.keys(charObj).length === 26 ? true : false)
 //}
-  
+
 //Refactored to:
 function isPangram(string) {
 
@@ -67,12 +64,46 @@ function isPangram(string) {
   })
 }
 
- //[1, 2, 'a', 'b'])).toEqual([1, 2])
 function filter_list(l) {
- return l.filter(n => 
-   typeof(n) === "number"
- )
+  return l.filter(n =>
+    typeof (n) === "number"
+  )
 }
+
+
+//Bouncingball:
+// A ball from a height of  h and it bounces to two-thirds of its height (bounce = 0.66). A window sits 1.5 meters from the ground. How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing)?
+// Three conditions must be met for a valid experiment:
+// Float parameter "h" in meters must be greater than 0
+// Float parameter "bounce" must be greater than 0 and less than 1
+// Float parameter "window" must be less than h.
+
+
+function bouncingBall(h, bounce, window) {
+
+  function newHeight() {
+    h = h * bounce
+  }
+
+  let count = 0
+
+  if (h > 0 && h> window && bounce > 0 && bounce < 1) {
+    count++
+    newHeight()
+  } else {
+    return -1
+  }
+
+  while (h > window) {
+    count += 2
+    newHeight()
+
+  }
+  return count
+}
+
+
+
 
 
 module.exports = {
@@ -82,5 +113,6 @@ module.exports = {
   likes,
   isValidWalk,
   isPangram,
-  filter_list
+  filter_list,
+  bouncingBall
 };
