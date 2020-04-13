@@ -87,7 +87,7 @@ function bouncingBall(h, bounce, window) {
 
   let count = 0
 
-  if (h > 0 && h> window && bounce > 0 && bounce < 1) {
+  if (h > 0 && h > window && bounce > 0 && bounce < 1) {
     count++
     newHeight()
   } else {
@@ -103,7 +103,31 @@ function bouncingBall(h, bounce, window) {
 }
 
 
+function ExesAndOhs(str) {
+  let strArray = str.toLowerCase().split("")
 
+  const o = strArray.filter(n => n === "o").length
+  const x = strArray.filter(n => n === "x").length
+
+  if (x === o) {
+    return true
+  }
+  return false
+}
+
+function race(v1, v2, g) {
+  let timeToTravelG = (3600 / (v2 - v1) * g)
+
+  let hrs = Math.floor(timeToTravelG / 3600)
+  let mins = Math.floor((timeToTravelG % 3600) / 60)
+  let secs = Math.floor(timeToTravelG % 60)
+
+  array = []
+  array.push(hrs)
+  array.push(mins)
+  array.push(secs)
+  return array
+}
 
 
 module.exports = {
@@ -114,5 +138,7 @@ module.exports = {
   isValidWalk,
   isPangram,
   filter_list,
-  bouncingBall
-};
+  bouncingBall,
+  ExesAndOhs,
+  race
+}
