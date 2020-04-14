@@ -116,17 +116,30 @@ function ExesAndOhs(str) {
 }
 
 function race(v1, v2, g) {
-  let timeToTravelG = (3600 / (v2 - v1) * g)
+  if (v2 >= v1) {
+    let timeToTravelG = (3600 / (v2 - v1) * g)
 
-  let hrs = Math.floor(timeToTravelG / 3600)
-  let mins = Math.floor((timeToTravelG % 3600) / 60)
-  let secs = Math.floor(timeToTravelG % 60)
+    let hrs = Math.floor(timeToTravelG / 3600)
+    let mins = Math.floor((timeToTravelG % 3600) / 60)
+    let secs = Math.floor(timeToTravelG % 60)
 
-  array = []
-  array.push(hrs)
-  array.push(mins)
-  array.push(secs)
-  return array
+    array = []
+    array.push(hrs, mins, secs)
+    return array
+  }
+  return null
+}
+
+//refactored solution taken from kata solutions:
+// let time=g/(v2-v1);
+// return v2>v1 ? [Math.floor(time),Math.floor(time*60%60),Math.floor(time*3600%60)] : null;
+// }
+
+var number = function (array) {
+  return array.map((str, i) => {
+    let index = i + 1
+    return (index + ": " + str)
+  })
 }
 
 
@@ -140,5 +153,6 @@ module.exports = {
   filter_list,
   bouncingBall,
   ExesAndOhs,
-  race
+  race,
+  number
 }
