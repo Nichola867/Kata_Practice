@@ -9,5 +9,7 @@ Each kata is crafted for and by the community. The author (or Sensei) who create
 
 ### Instructions
 
-[CodeWars.com](https://www.codewars.com/) provides kata questions to be resolved. Challenges I have completed (using Javascript) have been included here, along with self-written tests.
+[CodeWars.com](https://www.codewars.com/) provides kata questions to be resolved. Challenges I have completed (using Javascript) have been included here, along with self-written tests. 
+
+Also to note, I have left in comments as part of my own learning and reference, as well as refactored and original solutions worked out either by myself or taken from other CodeWars users, again to support my learning. I have noted when this has been this case.
 

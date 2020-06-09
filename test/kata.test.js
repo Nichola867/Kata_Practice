@@ -9,7 +9,9 @@ const {
   bouncingBall,
   ExesAndOhs,
   race,
-  number
+  number,
+  jadenCase
+
 } = require("../kata_functions");
 
 describe("squareDigits", () => {
@@ -112,10 +114,17 @@ describe("race", () => {
 })
 
 describe("number", () => {
-  test(" Returns a list of strings with each line prepended by the correct number.", () => {
+  test("Returns a list of strings with each line prepended by the correct number.", () => {
     expect(number(["a", "b", "c"])).toEqual(["1: a", "2: b", "3: c"])
   })
   test("An empty array should return an empty array ", () => {
-  expect(number([])).toEqual([])
+    expect(number([])).toEqual([])
   })
+})
+
+describe("jadenCase", () => {
+  test("Returns the string will first letter of each word in upper case", () => {
+    expect(jadenCase("How can mirrors be real if our eyes aren't real")).toBe("How Can Mirrors Be Real If Our Eyes Aren't Real")
+  })
+  expect(jadenCase("If a book store never runs out of a certain book, dose that mean that nobody reads it, or everybody reads it")).toBe("If A Book Store Never Runs Out Of A Certain Book, Dose That Mean That Nobody Reads It, Or Everybody Reads It")
 })

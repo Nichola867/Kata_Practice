@@ -142,6 +142,35 @@ var number = function (array) {
   })
 }
 
+// REFACTORED SOLUTION:
+function jadenCase(string) {
+  let words = string.split(" ")
+
+  let result = words.map(n =>
+    n.charAt(0).toUpperCase() + n.slice(1)
+  )
+
+  return (result.join(" "))
+}
+
+// ORIGINAL CODE:
+// function jadenCase(string) {
+//   let words = string.split(" ")
+//   let result = []
+
+//   for (let i = 0; i < words.length; i++) {
+//     result.push ((words[i][0].toUpperCase()) + (words[i].slice(1, words.length)))
+//   }
+
+//   return result.join(" ")
+// }
+
+
+
+
+
+
+
 
 module.exports = {
   squareDigits,
@@ -154,5 +183,6 @@ module.exports = {
   bouncingBall,
   ExesAndOhs,
   race,
-  number
+  number,
+  jadenCase
 }
